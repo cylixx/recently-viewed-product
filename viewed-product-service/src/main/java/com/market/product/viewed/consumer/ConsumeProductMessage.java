@@ -25,7 +25,7 @@ public class ConsumeProductMessage {
 
 	@RabbitListener(queues = MessagingConfig.QUEUE)
 	public void consumeProductVisitedMessage(ProductMessage productMessage) {
-		logger.info("===== Consume message from queue: {}", productMessage);
+		logger.info("===== CONSUME message from RabittMQ: {}", productMessage);
 
 		ProductViewed productViewed = new ProductViewed();
 		productViewed.setCustomerId(productMessage.getCustomerId());

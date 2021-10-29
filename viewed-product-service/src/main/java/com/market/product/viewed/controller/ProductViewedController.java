@@ -28,7 +28,7 @@ public class ProductViewedController {
 
 	
 	@PostMapping
-	public ResponseEntity<?> save(@RequestBody ProductViewed productViewed) {
+	public ResponseEntity<?> saveProductViewed(@RequestBody ProductViewed productViewed) {
 		ProductViewed saved = null;
 
 		try {

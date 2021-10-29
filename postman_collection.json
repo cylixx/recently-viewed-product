@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "8efb2938-4730-4b73-8ff1-305cbee9395d",
+		"name": "recently-viewed-product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "viewd-product-service",
+			"item": [
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\" : 100,\n    \"productId\": 2,\n    \"name\": \"Product 2\",\n    \"quantity\": 100,\n    \"price\": 10,\n    \"lastViewed\": \"2021-10-27T15:30:14\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9091/api/product/viewed"
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve recently viewed product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9091/api/product/viewed/1234"
+					},
+					"response": [
+						{
+							"name": "saveProductView Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:9091/api/product/viewed/100"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Oct 2021 18:20:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"productId\": 21,\n        \"name\": \"product 21\",\n        \"quantity\": 200,\n        \"price\": 10,\n        \"lastViewed\": \"2021-10-29T18:20:39.000+00:00\"\n    },\n    {\n        \"productId\": 25,\n        \"name\": \"product 25\",\n        \"quantity\": 150,\n        \"price\": 25,\n        \"lastViewed\": \"2021-10-29T18:20:19.000+00:00\"\n    },\n    {\n        \"productId\": 10,\n        \"name\": \"product 10\",\n        \"quantity\": 150,\n        \"price\": 25,\n        \"lastViewed\": \"2021-10-29T18:14:32.000+00:00\"\n    },\n    {\n        \"productId\": 3,\n        \"name\": \"product 3\",\n        \"quantity\": 320,\n        \"price\": 50,\n        \"lastViewed\": \"2021-10-29T18:13:02.000+00:00\"\n    },\n    {\n        \"productId\": 50,\n        \"name\": \"product 50\",\n        \"quantity\": 150,\n        \"price\": 25,\n        \"lastViewed\": \"2021-10-29T18:12:57.000+00:00\"\n    },\n    {\n        \"productId\": 11,\n        \"name\": \"product 11\",\n        \"quantity\": 200,\n        \"price\": 10,\n        \"lastViewed\": \"2021-10-29T18:12:52.000+00:00\"\n    },\n    {\n        \"productId\": 8,\n        \"name\": \"product 8\",\n        \"quantity\": 320,\n        \"price\": 50,\n        \"lastViewed\": \"2021-10-29T18:12:21.000+00:00\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9091/api/product/viewed/100/4"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9091/api/product/viewed/100/4"
+					},
+					"response": []
+				},
+				{
+					"name": "find All Product Viewed",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9091/api/product/viewed"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product-service",
+			"item": [
+				{
+					"name": "client visit a product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9090/product/1234"
+					},
+					"response": [
+						{
+							"name": "getProductById",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:9090/product/100/21"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Oct 2021 18:20:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 21,\n    \"name\": \"product 21\",\n    \"quantity\": 200,\n    \"price\": 10\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

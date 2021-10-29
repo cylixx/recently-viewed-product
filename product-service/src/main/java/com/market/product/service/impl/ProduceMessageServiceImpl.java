@@ -34,7 +34,7 @@ public class ProduceMessageServiceImpl implements ProduceMessageService {
 			Product prod = product.get();
 			ProductMessage message = new ProductMessage(customerId, prod.getId(), PRODUCT_VISITED, "product visited");
 			template.convertAndSend(MessagingConfig.EXCHANGE, MessagingConfig.ROUTING_KEY, message);
-			logger.info("Message pushed on RabbitMQ: {}", message);
+			logger.info("===== PRODUCE message to RabbitMQ: {}", message);
 		}
 	}
 

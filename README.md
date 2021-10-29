@@ -72,11 +72,11 @@ To build the application go to folder of each project and execute the commands b
   
 ```
 cd {path}/product-service  
-./gradlew clean build
+./gradlew clean build -x test
 docker build -t product-service:1.0 .
 
 cd {path}/viewed-product-service
-./gradlew clean build
+./gradlew clean build -x test
 docker build -t viewed-product-service:1.0 .
 
 ```
@@ -158,6 +158,8 @@ GET: <http://localhost:9090/product/{customerId}/{productId}>
 
 The application already has 100 products preloaded ranging from 1 ... 100, as well as 10 clients from 100 ... 110. To test the application, just replace the clientId with any value between 100 ... 110 and the productId with values ​​between 1 ... 100.
 As part of the request when the user does not have any visited products, a default list is returned that is obtained from the "product_most_viewed" table, ordered in descending order.
+
+I have added a file to upload to postman with the endpoints to test, the file is called "postman_collection.json" and it is in the root of the project. 
 
 ------------------------------------------------------------
 

@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS
         name        VARCHAR(255), 
         PRIMARY KEY (customer_id) 
     ) 
-    ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_0900_ai_ci;
+    ENGINE=InnoDB DEFAULT CHARSET=utf8 DEFAULT COLLATE=utf8_general_ci;
     
 CREATE TABLE IF NOT EXISTS 
     product 
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS
         quantity INT NOT NULL, 
         PRIMARY KEY (product_id) 
     ) 
-    ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_0900_ai_ci;
+    ENGINE=InnoDB DEFAULT CHARSET=utf8 DEFAULT COLLATE=utf8_general_ci;
 
 
 CREATE TABLE IF NOT EXISTS 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS
         PRIMARY KEY (id), 
         INDEX FK5kby6kihb89dunouu3ul9rhbv (product_id) 
     ) 
-    ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_0900_ai_ci;
+    ENGINE=InnoDB DEFAULT CHARSET=utf8 DEFAULT COLLATE=utf8_general_ci;
 
 
 CREATE TABLE IF NOT EXISTS 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS
         CONSTRAINT UK_t8wk5tdxv91rh5nh4p5v6qshy UNIQUE (product_id), 
         INDEX FK97x4fwq3v057vaxmctgwaj79t (customer_id) 
     ) 
-    ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_0900_ai_ci;
+    ENGINE=InnoDB DEFAULT CHARSET=utf8 DEFAULT COLLATE=utf8_general_ci;
     
 ALTER TABLE product_viewed ADD CONSTRAINT FK_productViewed_customer FOREIGN KEY (customer_id) REFERENCES `customer`(customer_id);
 ALTER TABLE product_viewed ADD CONSTRAINT FK_productViewed_product FOREIGN KEY (product_id) REFERENCES `product`(product_id);
