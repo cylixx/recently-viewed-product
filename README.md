@@ -106,10 +106,11 @@ Run using docker compose (recommended). You need to have installed Docker and Co
     cd {path}/viewed-product-service
     ./gradlew bootRun
  
- 
-* NOTE:
-   The database schema and inserts data are in this route: 
-   {Source Path}/viewed-product-service/src/main/resources 
+
+> 
+ _NOTE:_  The database schema and inserts data are in this route:      
+  {Source Path}/viewed-product-service/src/main/resources/schema.sql      
+  {Source Path}/viewed-product-service/src/main/resources/data.sql
  
   
 ## URLs
@@ -155,7 +156,7 @@ GET: <http://localhost:9090/product/{customerId}/{productId}>
 
 ## TestApp
 
-The application already has 100 products preloaded ranging from 1 ... 100, as well as 10 clients from 1 ... 10. To test the application, just replace the clientId with any value between 1 ... 10 and the productId with values ​​between 1 ... 100.
+The application already has 100 products preloaded ranging from 1 ... 100, as well as 10 clients from 100 ... 110. To test the application, just replace the clientId with any value between 100 ... 110 and the productId with values ​​between 1 ... 100.
 As part of the request when the user does not have any visited products, a default list is returned that is obtained from the "product_most_viewed" table, ordered in descending order.
 
 ------------------------------------------------------------
